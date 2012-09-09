@@ -1,0 +1,5 @@
+.gradle/
+build/
+.idea/
+Algorithm-test.iml
+out/
