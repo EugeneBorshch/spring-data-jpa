@@ -23,7 +23,8 @@ repositories {
 
 
 springVersion = "3.0.5.RELEASE"
-Slf4jVersion = "1.6.1"
+slf4jVersion = "1.6.1"
+hibVersion = "4.0.0.Final"
 
 dependencies {
     // Set-up Compile time dependencies
@@ -32,11 +33,13 @@ dependencies {
     // Pull in all of the Spring dependencies 
 
 
-    compile "org.springframework:spring-tx:$springVersion",            
+    compile "org.springframework:spring-core:$springVersion",            
         "org.springframework:spring-orm:$springVersion",
-        "org.springframework:spring-jdbc:$springVersion",
-        "org.springframework:spring-aspects:$springVersion",
-        "org.aspectj:aspectjrt:1.6.11"
+        "org.hibernate:hibernate-core:$hibVersion",
+        "org.hibernate:hibernate-entitymanager:$hibVersion",
+        "org.springframework.data:spring-data-jpa:1.0.3.RELEASE",
+	"org.hsqldb:hsqldb:2.2.4"
         
     testCompile group: 'junit', name: 'junit', version: '4.8+'
+    testCompile "org.springframework:spring-test:$springVersion"
 }
